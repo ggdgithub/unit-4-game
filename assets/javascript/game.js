@@ -1,5 +1,16 @@
 // Pseudocode
     // Variables
+var goalNumber;
+var crystal = [
+    "one",
+    "two",
+    "three",
+    "four"
+];
+var playerNumber = 0;
+var wins = 0;
+var losses = 0;
+
         // Goal Number Variable
             // Randomly Chosen 19-120
             // Displayed on Webpage
