@@ -3,24 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Crystal Collector</title>
+    <title>Coin Collector</title>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-
 </head>
 
 <body>
 
     <div class="container">
 
-        <div class="jumbotron" style="background-color: rgb(61, 129, 118); color: white;">
+        <!-- Game Title -->
+        <div class="jumbotron" style="background-color: gold; color: white;">
             <div class="container">
                 <h1 class="text-center">
-                    <strong>Crystal Collector</strong>
+                    <strong>Coin Collector</strong>
                 </h1>
             </div>
         </div>
 
+        <!-- Instructions -->
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-4">
@@ -29,17 +30,18 @@
                     </div>
                     <div class="card-body">
                         <p>
-                            The goal of this game is to match the target number by clicking on the crystals below. Each
-                            crystal has a certain value that is revealed upon clicking on it. If you go over the target
+                            The goal of this game is to match the target number by clicking on the coins below. Each
+                            coin has a certain value that is revealed upon clicking on it. If you go over the target
                             number, you lose.
                         </p>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="row">
+
+            <!-- Target -->
             <div class="col-md-3">
                 <div class="card mb-4">
                     <div class="card-header">
@@ -51,11 +53,11 @@
                 </div>
             </div>
 
+            <!-- Player -->
             <div class="col-md-3">
-
                 <div class="card mb-4">
                     <div class="card-header">
-                        Player Number
+                        Player Score
                     </div>
                     <div class="card-body">
                         <h3 class="text-center" id="your-score"></h3>
@@ -63,22 +65,23 @@
                 </div>
             </div>
 
+            <!-- Coins -->
             <div class="col-md-6">
                 <div class="card mb-4">
                     <div class="card-header">
-                        Crystal Selection
+                        Coin Selection
                     </div>
                     <div class="card-body text-center">
-                        <img src="assets\images\blue.png" id="blue">
-                        <img src="assets\images\green.png" id="green">
-                        <img src="assets\images\red.png" id="red">
-                        <img src="assets\images\yellow.png" id="yellow">
+                        <img src="assets\images\BlondeCoin.jpg" id="Blonde">
+                        <img src="assets\images\DogeCoin.jpg" id="Doge">
+                        <img src="assets\images\FreedomCoin.jpg" id="Freedom">
+                        <img src="assets\images\SuperMarioCoin.jpg" id="SuperMario">
                     </div>
                 </div>
             </div>
-
         </div>
 
+        <!-- Scoreboard -->
         <div class="row">
             <div class="col-md-6">
                 <div class="card mb-4">
@@ -92,11 +95,11 @@
             </div>
 
             <div class="col-md-6">
+
                 <div class="card mb-4">
                     <div class="card-header">
                         Losses
                     </div>
-
                     <div class="card-body">
                         <h3 class="text-center" id="loss-count">0</h3>
                     </div>
@@ -105,6 +108,7 @@
         </div>
     </div>
 
+    <!-- jquery and game.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets\javascript\game.js"></script>
 </body>

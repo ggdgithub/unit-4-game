@@ -1,22 +1,22 @@
-var crystal = {
-    blue:
+var coin = {
+    blonde:
     {
-        name: "Blue",
+        name: "blonde",
         value: 0
     },
-    green:
+    freedom:
     {
-        name: "Green",
+        name: "freedom",
         value: 0
     },
-    red:
+    doge:
     {
-        name: "Red",
+        name: "doge",
         value: 0
     },
-    yellow:
+    supermario:
     {
-        name: "Yellow",
+        name: "supermario",
         value: 0
     }
 };
@@ -37,10 +37,10 @@ var startGame = function () {
 
     targetScore = getRandom(19, 120);
 
-    crystal.blue.value = getRandom(1, 12);
-    crystal.red.value = getRandom(1, 12);
-    crystal.green.value = getRandom(1, 12);
-    crystal.yellow.value = getRandom(1, 12);
+    coin.blonde.value = getRandom(1, 12);
+    coin.doge.value = getRandom(1, 12);
+    coin.freedom.value = getRandom(1, 12);
+    coin.supermario.value = getRandom(1, 12);
 
     $("#your-score").text(currentScore);
     $("#target-score").text(targetScore);
@@ -71,9 +71,9 @@ var checkWin = function () {
     }
 };
 
-var addValues = function (clickedCrystal) {
+var addValues = function (clickedcoin) {
 
-    currentScore += clickedCrystal.value;
+    currentScore += clickedcoin.value;
 
     $("#your-score").text(currentScore);
 
@@ -84,18 +84,18 @@ var addValues = function (clickedCrystal) {
 
 startGame();
 
-$("#blue").click(function () {
-    addValues(crystal.blue);
+$("#Blonde").click(function () {
+    addValues(coin.blonde);
 });
 
-$("#red").click(function () {
-    addValues(crystal.red);
+$("#Doge").click(function () {
+    addValues(coin.doge);
 });
 
-$("#green").click(function () {
-    addValues(crystal.green);
+$("#Freedom").click(function () {
+    addValues(coin.freedom);
 });
 
-$("#yellow").click(function () {
-    addValues(crystal.yellow);
+$("#SuperMario").click(function () {
+    addValues(coin.supermario);
 });
