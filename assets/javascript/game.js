@@ -1,48 +1,101 @@
-    // DOESN'T CHANGE OVER TIME
-var goalNumber = Math.floor(Math.random() * (120 - 19) + 19);
-var crystal1 = Math.floor(Math.random() * (12 - 1) + 1);
-var crystal2 = Math.floor(Math.random() * (12 - 1) + 1);
-var crystal3 = Math.floor(Math.random() * (12 - 1) + 1);
-var crystal4 = Math.floor(Math.random() * (12 - 1) + 1);
+var crystal = {
+    blue:
+    {
+        name: "Blue",
+        value: 0
+    },
+    green:
+    {
+        name: "Green",
+        value: 0
+    },
+    red:
+    {
+        name: "Red",
+        value: 0
+    },
+    yellow:
+    {
+        name: "Yellow",
+        value: 0
+    }
+};
 
-// CHANGES OVER TIME
-var playerNumber = 0;
-var wins = 0;
-var losses = 0;
+var currentScore = 0;
+var targetScore = 0;
 
-console.log(crystal1);
-console.log(crystal2);
-console.log(crystal3);
-console.log(crystal4);
-console.log(goalNumber);
+var winCount = 0;
+var lossCount = 0;
 
-if(playerNumber > goalNumber) {
-    // say player lost
-    // losses++
-}
+var getRandom = function (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
-else if(playerNumber === goalNumber) {
-    // say player won
-    // wins++
-}
-        // X Goal Number Variable
-            // X Randomly Chosen 19-120
-            // X Displayed on Webpage
-        // X Crystal Buttons
-            // X Randomly Chosen 1-12
-            // value hidden until clicked
-            // value shown on page
-            // addive properties
-        // X Wins
-        // X Losses
-    // Game loop
-        // player given number
-        // player clicks on crystal
-        // player finds out value of crystal as they add up
-        // Win condition
-            // if player score > given number || player quits
-                // player loses
-                // track losses++
-            // else if player score === given number
-                // player wins
-                // track wins++
+var startGame = function () {
+
+    currentScore = 0;
+
+    targetScore = getRandom(19, 120);
+
+    crystal.blue.value = getRandom(1, 12);
+    crystal.red.value = getRandom(1, 12);
+    crystal.green.value = getRandom(1, 12);
+    crystal.yellow.value = getRandom(1, 12);
+
+    $("#your-score").text(currentScore);
+    $("#target-score").text(targetScore);
+};
+
+var checkWin = function () {
+
+    if (currentScore > targetScore) {
+        alert("Sorry. You lost!");
+        console.log("You Lost");
+
+        lossCount++;
+
+        $("#loss-count").text(lossCount);
+
+        startGame();
+    }
+
+    else if (currentScore === targetScore) {
+        alert("Congratulations! You Won!");
+        console.log("You Won!");
+
+        winCount++;
+
+        $("#win-count").text(winCount);
+
+        startGame();
+    }
+};
+
+var addValues = function (clickedCrystal) {
+
+    currentScore += clickedCrystal.value;
+
+    $("#your-score").text(currentScore);
+
+    checkWin();
+
+    console.log("Your Score: " + currentScore);
+};
+
+startGame();
+
+$("#blue").click(function () {
+    addValues(crystal.blue);
+});
+
+$("#red").click(function () {
+    addValues(crystal.red);
+});
+
+$("#green").click(function () {
+    addValues(crystal.green);
+});
+
+$("#yellow").click(function () {
+    addValues(crystal.yellow);
+});
